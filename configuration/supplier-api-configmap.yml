@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-api-config
+data:
+  OPENSHIFT_APP_NAME: sample-api
+  OPENSHIFT_REST_SECURITY_ISSUER_URI: https://sso74.apps.CHANGEME/auth/realms/sample
+  OPENSHIFT_SECURITY_OAUTH2_RESOURCE: sample-api
+  OPENSHIFT_JAEGER_HOST: jaeger-agent.CHANGEME.svc
+  OPENSHIFT_SECURITY_OAUTH2_PUBLIC_KEY: "-----BEGIN PUBLIC KEY-----\nCHANGEME\n-----END PUBLIC KEY-----"

@@ -1,0 +1,10 @@
+# springboot validation messages
+validation:
+  message:
+    field:
+      required:
+        field is required and may not be null
+        value:
+          Product value cannot be empty
+        description:
+          Product description cannot be empty
