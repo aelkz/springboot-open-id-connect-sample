@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.oauth2;
+package com.redhat.rhsso.sample.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

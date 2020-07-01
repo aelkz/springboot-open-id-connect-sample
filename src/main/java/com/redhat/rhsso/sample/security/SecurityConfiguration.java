@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.oauth2;
+package com.redhat.rhsso.sample.security;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

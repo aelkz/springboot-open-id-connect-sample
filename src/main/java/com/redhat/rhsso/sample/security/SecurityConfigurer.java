@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.oauth2;
+package com.redhat.rhsso.sample.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
