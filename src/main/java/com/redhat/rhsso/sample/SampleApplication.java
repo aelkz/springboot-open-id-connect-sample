@@ -3,8 +3,6 @@ package com.redhat.rhsso.sample;
 import io.micrometer.core.instrument.config.MeterFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
@@ -17,7 +15,7 @@ import org.springframework.web.filter.CorsFilter;
 import java.util.Collections;
 
 @EnableAsync
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class, UserDetailsServiceAutoConfiguration.class})
+@SpringBootApplication
 public class SampleApplication {
 
     /**

@@ -49,7 +49,7 @@ public class ProductController extends BaseController {
             value = "Get",
             notes = "Get all products",
             response = Product.class)
-    @PreAuthorize("hasAuthority('ROLE_PRODUCT_VIEWER')")
+    @PreAuthorize("hasRole('ROLE_PRODUCT_VIEWER')")
     public Page<Product> getAll(
             @ApiParam("Zero-based page index") @RequestParam(required = false) Integer page,
             @ApiParam("The size of the page to be returned") @RequestParam(required = false) Integer size
@@ -64,6 +64,19 @@ public class ProductController extends BaseController {
         Pageable pageable = PageRequest.of(page, size);
 
         return service.findAll(pageable);
+    }
+
+    /**
+     * this is an example of unsecured endpoint
+     */
+    @Timed(value = "application.health", description = "Health check endpoint")
+    @RequestMapping(path = "/v1/health", method = RequestMethod.GET, consumes = { MediaType.APPLICATION_JSON_VALUE })
+    @ApiOperation(
+            value = "Get",
+            notes = "Get application health",
+            response = String.class)
+    public ResponseEntity<String> health( ) {
+        return ResponseEntity.ok().body("ok");
     }
 
     @InitBinder("event")

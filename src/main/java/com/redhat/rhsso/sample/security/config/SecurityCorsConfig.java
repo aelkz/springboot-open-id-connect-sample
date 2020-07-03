@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.security;
+package com.redhat.rhsso.sample.security.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,8 @@ import java.util.List;
 @Component
 @Configuration
 @ConfigurationProperties(prefix = "rest.security")
-public class SecurityConfiguration {
+public class SecurityCorsConfig {
+
     private boolean enabled;
     private String apiMatcher;
     private Cors cors;

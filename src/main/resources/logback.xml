@@ -7,9 +7,9 @@
 
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 
-    <root level="DEBUG">
+    <root level="TRACE">
         <appender-ref ref="CONSOLE" />
     </root>
 
-    <logger name="org.springframework.web" level="DEBUG" />
+    <logger name="org.springframework.web" level="TRACE" />
 </configuration>

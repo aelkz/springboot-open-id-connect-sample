@@ -11,14 +11,14 @@ logging:
 # contextPath: /api/v${api.version}/*
 server:
   address: 0.0.0.0
-  port: 8080
+  port: 8070
 
 # =============================================
 # spring configurations
 # ---------------------------------------------
 spring:
   application:
-    name: ${OPENSHIFT_APP_NAME:supplier-api}
+    name: ${OPENSHIFT_APP_NAME:sample-api}
   jpa:
     # log generated sql
     database-platform: org.hibernate.dialect.H2Dialect
@@ -46,6 +46,21 @@ spring:
     serialization:
       write_dates_as_timestamps: true
 
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/auth/realms/sample
+        registration:
+          keycloak:
+            client-id: sample-api
+            client-secret: 19283667-7fb3-41b4-8394-75599045c100
+      resourceserver:
+        jwt:
+          issuer-uri: ${rest.security.issuer-uri}
+          jwk-set-uri: http://localhost:8080/auth/realms/sample/protocol/openid-connect/certs
+
 # =============================================
 # spring security configurations
 # ---------------------------------------------
@@ -58,37 +73,7 @@ rest:
       allowed-headers: '*'
       allowed-methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
       max-age: 3600
-    issuer-uri: ${OPENSHIFT_REST_SECURITY_ISSUER_URI:https://sso74.apps.CHANGEME/auth/realms/sample}
-
-security:
-  oauth2:
-    resource:
-      # ----------------------------------------------------------------------------------------------------
-      # This API is a microservice that does not handle login negotiation! It is a bear-only API
-      # access-type: bear-only
-      # (this is the API that will be registered on RHSSO)
-      # ----------------------------------------------------------------------------------------------------
-      id: ${OPENSHIFT_SECURITY_OAUTH2_RESOURCE:sample}
-      token-info-uri: ${rest.security.issuer-uri}/protocol/openid-connect/token/introspect
-      user-info-uri: ${rest.security.issuer-uri}/protocol/openid-connect/userinfo
-      jwt:
-        key-value: ${OPENSHIFT_SECURITY_OAUTH2_PUBLIC_KEY:"-----BEGIN PUBLIC KEY-----\nCHANGEME\n-----END PUBLIC KEY-----"}
-
-        # ----------------------------------------------------------------------------------------------------
-        # Uncomment the following configuration if this API will consume another APIs (as a service account)
-        # To allow this, this microservice must handle login negotiation. Change its access-type:
-        # access-type: confidential
-        # The RHSSO will provide a client-secret, so use it here.
-        # PS. Remember to provide the proper roles to this client in service account tab.
-        # ----------------------------------------------------------------------------------------------------
-        # To access another secured micro-service
-        #client:
-        #client-id: sample
-        #client-secret: 20c33103-e1b6-4fc1-afb0-c21dbc01ecd7
-        #user-authorization-uri: ${rest.security.issuer-uri}/protocol/openid-connect/auth
-        #access-token-uri: ${rest.security.issuer-uri}/protocol/openid-connect/token
-        #scope: openid
-        #grant-type: client_credentials
+    issuer-uri: ${OPENSHIFT_REST_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/sample}
 
 # =============================================
 # spring actuator configurations
