@@ -14,10 +14,12 @@ TEST:<br>
 springboot2+spring_security+keycloak.postman_collection.json
 
 <p align="center">
+Create a new product:
 <img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/01.png" title="POST Product" width="85%" height="85%" />
 </p>
 
 <p align="center">
+Retrieve all products:
 <img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/02.png" title="GET Products" width="85%" height="85%" />
 </p>
 
