@@ -1,6 +1,10 @@
 package com.redhat.rhsso.sample.model;
 
+import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
 @Entity
@@ -12,12 +16,18 @@ public class Product extends BaseModel {
     private Long id;
 
     @Column(name="status", nullable = false)
+    @Pattern(regexp = "ACTIVE|INACTIVE", flags = Pattern.Flag.CASE_INSENSITIVE)
+    @NotNull
     private String status;
 
     @Column(name="description", nullable = false)
+    @Length(max = 255)
+    @NotNull
     private String description;
 
     @Column(name="value", nullable = false)
+    @Digits(integer = 5 /*precision*/, fraction = 2 /*scale*/)
+    @NotNull
     private Long value;
 
     public Product() { }
