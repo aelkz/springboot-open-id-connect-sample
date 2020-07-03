@@ -2,8 +2,8 @@
 2. Create a new realm: <b>sample</b>
 3. Under sample realm, create user: <b>admin/admin</b>
 4. Create clients:
-  - <b>sample-api</b>
-  - <b>sample-web</b>
+  - <b>sample-api</b> type: bearer-only
+  - <b>sample-web</b> type: public
 5. Create client roles (for both clients):
   - <b>PRODUCT_VIEWER</b>
   - <b>PRODUCT_MAINTAINER</b>
