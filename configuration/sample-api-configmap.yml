@@ -7,4 +7,5 @@ data:
   OPENSHIFT_SECURITY_ISSUER_URI: http://localhost:8080/auth/realms/sample
   OPENSHIFT_SECURITY_JWK_URI: http://localhost:8080/auth/realms/sample/protocol/openid-connect/certs
   OPENSHIFT_SECURITY_CLIENT_ID: sample-api
+  OPENSHIFT_SECURITY_CLIENT_SECRET: 19283667-7fb3-41b4-8394-75599045c100
   OPENSHIFT_JAEGER_HOST: jaeger-agent.CHANGEME.svc
