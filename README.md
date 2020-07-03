@@ -14,11 +14,11 @@ TEST:<br>
 springboot2+spring_security+keycloak.postman_collection.json
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/01.png" title="POST Product" width="70%" height="70%" />
+<img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/01.png" title="POST Product" width="85%" height="85%" />
 </p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/02.png" title="GET Products" width="70%" height="70%" />
+<img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/02.png" title="GET Products" width="85%" height="85%" />
 </p>
 
 REFERENCES:<br>
