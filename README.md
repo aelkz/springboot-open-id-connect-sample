@@ -1,10 +1,10 @@
 1. Start your RH-SSO / Keycloak
 2. Create a new realm: sample
-3. Under sample realm, create user admin/admin
+3. Under sample realm, create user: admin/admin
 4. Create clients:
   - sample-api
   - sample-web
-5. Create client roles (both clients):
+5. Create client roles (for both clients):
   - PRODUCT_VIEWER
   - PRODUCT_MAINTAINER
 6. Create role mappings for user admin with recently created roles
@@ -14,11 +14,11 @@ TEST:<br>
 springboot2+spring_security+keycloak.postman_collection.json
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/01.png" title="POST Product" width="40%" height="40%" />
+<img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/01.png" title="POST Product" width="70%" height="70%" />
 </p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/02.png" title="GET Products" width="40%" height="40%" />
+<img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/02.png" title="GET Products" width="70%" height="70%" />
 </p>
 
 REFERENCES:<br>
