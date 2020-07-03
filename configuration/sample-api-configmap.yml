@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-api-config
+data:
+  OPENSHIFT_APP_NAME: sample-api
+  OPENSHIFT_SECURITY_ISSUER_URI: http://localhost:8080/auth/realms/sample
+  OPENSHIFT_SECURITY_JWK_URI: http://localhost:8080/auth/realms/sample/protocol/openid-connect/certs
+  OPENSHIFT_SECURITY_CLIENT_ID: sample-api
+  OPENSHIFT_JAEGER_HOST: jaeger-agent.CHANGEME.svc

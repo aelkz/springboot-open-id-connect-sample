@@ -51,15 +51,15 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: http://localhost:8080/auth/realms/sample
+            issuer-uri: ${OPENSHIFT_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/sample}
         registration:
           keycloak:
-            client-id: sample-api
-            client-secret: 19283667-7fb3-41b4-8394-75599045c100
+            client-id: ${OPENSHIFT_SECURITY_CLIENT_ID:sample-api}
+            client-secret: ${OPENSHIFT_SECURITY_CLIENT_SECRET:19283667-7fb3-41b4-8394-75599045c100}
       resourceserver:
         jwt:
           issuer-uri: ${rest.security.issuer-uri}
-          jwk-set-uri: http://localhost:8080/auth/realms/sample/protocol/openid-connect/certs
+          jwk-set-uri: ${OPENSHIFT_SECURITY_JWK_URI:http://localhost:8080/auth/realms/sample/protocol/openid-connect/certs}
 
 # =============================================
 # spring security configurations
@@ -73,7 +73,7 @@ rest:
       allowed-headers: '*'
       allowed-methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
       max-age: 3600
-    issuer-uri: ${OPENSHIFT_REST_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/sample}
+    issuer-uri: ${OPENSHIFT_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/sample}
 
 # =============================================
 # spring actuator configurations
