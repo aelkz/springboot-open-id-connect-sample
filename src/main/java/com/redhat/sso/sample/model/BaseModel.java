@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.model;
+package com.redhat.sso.sample.model;
 
 import java.io.Serializable;
 

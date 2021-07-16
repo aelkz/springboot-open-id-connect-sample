@@ -38,3 +38,4 @@ https://github.com/Baeldung/spring-security-oauth<br>
 https://www.baeldung.com/spring-security-oauth-jwt<br>
 https://github.com/hotire/spring-security-basic<br>
 https://stackoverflow.com/questions/58205510/spring-security-mapping-oauth2-claims-with-roles-to-secure-resource-server-endp<br>
+https://developers.redhat.com/blog/2020/01/29/api-login-and-jwt-token-generation-using-keycloak

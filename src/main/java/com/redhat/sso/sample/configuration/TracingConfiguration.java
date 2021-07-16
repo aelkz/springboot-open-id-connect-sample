@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.configuration;
+package com.redhat.sso.sample.configuration;
 
 import io.jaegertracing.internal.samplers.ConstSampler;
 import io.opentracing.Tracer;

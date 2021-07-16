@@ -1,6 +1,6 @@
-package com.redhat.rhsso.sample.controller;
+package com.redhat.sso.sample.controller;
 
-import com.redhat.rhsso.sample.controller.error.Error;
+import com.redhat.sso.sample.controller.error.Error;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.ResponseEntity;

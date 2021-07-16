@@ -1,7 +1,7 @@
-package com.redhat.rhsso.sample.service;
+package com.redhat.sso.sample.service;
 
-import com.redhat.rhsso.sample.model.Product;
-import com.redhat.rhsso.sample.repository.ProductRepository;
+import com.redhat.sso.sample.model.Product;
+import com.redhat.sso.sample.repository.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

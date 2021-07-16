@@ -51,15 +51,32 @@ spring:
       client:
         provider:
           keycloak:
+            # required for application bootstrap
             issuer-uri: ${OPENSHIFT_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/sample}
         registration:
           keycloak:
             client-id: ${OPENSHIFT_SECURITY_CLIENT_ID:sample-api}
-            client-secret: ${OPENSHIFT_SECURITY_CLIENT_SECRET:19283667-7fb3-41b4-8394-75599045c100}
+            client-secret: ${OPENSHIFT_SECURITY_CLIENT_SECRET:942c02c3-6346-4922-99cc-29ff690d888e}
       resourceserver:
         jwt:
           issuer-uri: ${rest.security.issuer-uri}
           jwk-set-uri: ${OPENSHIFT_SECURITY_JWK_URI:http://localhost:8080/auth/realms/sample/protocol/openid-connect/certs}
+
+# =============================================
+# spring doc configurations
+# ---------------------------------------------
+
+springdoc:
+  packagesToScan:
+    - com.redhat.sso.sample.controller
+  pathsToMatch:
+    - /v1
+    - /api/v1/**
+    - /v1/**
+  api-docs:
+    enabled: true
+  default-produces-media-type: application/json
+  show-actuator: true
 
 # =============================================
 # spring security configurations

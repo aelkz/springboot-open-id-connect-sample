@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.security.config;
+package com.redhat.sso.sample.security.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample;
+package com.redhat.sso.sample;
 
 import io.micrometer.core.instrument.config.MeterFilter;
 import org.springframework.boot.SpringApplication;

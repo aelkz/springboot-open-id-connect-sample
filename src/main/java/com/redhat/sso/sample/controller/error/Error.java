@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.controller.error;
+package com.redhat.sso.sample.controller.error;
 
 public class Error {
 

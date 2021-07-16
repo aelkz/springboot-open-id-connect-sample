@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.security.jwt;
+package com.redhat.sso.sample.security.jwt;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;

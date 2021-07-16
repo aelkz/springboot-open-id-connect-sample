@@ -1,6 +1,6 @@
-package com.redhat.rhsso.sample.repository;
+package com.redhat.sso.sample.repository;
 
-import com.redhat.rhsso.sample.model.Product;
+import com.redhat.sso.sample.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "5ddb4954-0b7a-42c9-a6e2-49557f298559",
 		"name": "springboot 2 + spring security + keycloak",
-		"description": "Springboot 2.3+ with newest spring security library integrated with keycloak IAM.",
+		"description": "Springboot 2.5.2 with newest spring security library integrated with keycloak IAM.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

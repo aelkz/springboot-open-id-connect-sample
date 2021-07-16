@@ -1,4 +1,4 @@
-package com.redhat.rhsso.sample.configuration;
+package com.redhat.sso.sample.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

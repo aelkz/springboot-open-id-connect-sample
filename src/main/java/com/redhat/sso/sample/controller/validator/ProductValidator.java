@@ -1,6 +1,6 @@
-package com.redhat.rhsso.sample.controller.validator;
+package com.redhat.sso.sample.controller.validator;
 
-import com.redhat.rhsso.sample.model.Product;
+import com.redhat.sso.sample.model.Product;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;

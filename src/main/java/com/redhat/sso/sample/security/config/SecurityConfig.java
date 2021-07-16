@@ -1,6 +1,6 @@
-package com.redhat.rhsso.sample.security.config;
+package com.redhat.sso.sample.security.config;
 
-import com.redhat.rhsso.sample.security.jwt.JwtAuthenticationConverter;
+import com.redhat.sso.sample.security.jwt.JwtAuthenticationConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
