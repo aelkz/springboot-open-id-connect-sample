@@ -1,5 +1,8 @@
+# [<img src="https://www.keycloak.org/resources/images/keycloak_logo_480x108.png">](https://github.com/aelkz/springboot-open-id-connect-sample)
+
 ### Springboot OpenID Connect sample app
 ##### modules: spring-boot-starter-security, pring-boot-starter-oauth2-resource-server, spring-boot-starter-oauth2-client
+##### authorization server: keycloak
 
 1. Start Red Hat Single Sign-On (keycloak)
 2. Create a new <b>master</b> realm admin user
@@ -43,9 +46,11 @@ Retrieve all products:
 </p>
 
 REFERENCES:<br>
+https://github.com/thomasdarimont/awesome-keycloak
 https://docs.spring.io/spring-security/site/docs/current/reference/html5/<br>
 https://github.com/Baeldung/spring-security-oauth<br>
 https://www.baeldung.com/spring-security-oauth-jwt<br>
 https://github.com/hotire/spring-security-basic<br>
 https://stackoverflow.com/questions/58205510/spring-security-mapping-oauth2-claims-with-roles-to-secure-resource-server-endp<br>
 https://developers.redhat.com/blog/2020/01/29/api-login-and-jwt-token-generation-using-keycloak
+https://access.redhat.com/products/red-hat-single-sign-on
