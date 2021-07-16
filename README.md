@@ -45,7 +45,16 @@ Retrieve all products:
 <img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/02.png" title="GET Products" width="85%" height="85%" />
 </p>
 
-REFERENCES:<br>
+### API-DOCS (springdoc-openapi)
+
+http://localhost:8070/api-docs (json)
+http://localhost:8070/api-docs.yaml
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/06.png" title="OpenAPI Docs" width="85%" height="85%" />
+</p>
+
+### REFERENCES:<br>
 https://github.com/thomasdarimont/awesome-keycloak
 https://docs.spring.io/spring-security/site/docs/current/reference/html5/<br>
 https://github.com/Baeldung/spring-security-oauth<br>
