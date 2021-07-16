@@ -1,34 +1,44 @@
-1. Start your RH-SSO / Keycloak
-2. Create a new realm: <b>sample</b>
-3. Under sample realm, create user: <b>admin/admin</b>
-4. Create clients:
+### Springboot OpenID Connect sample app
+##### modules: spring-boot-starter-security, pring-boot-starter-oauth2-resource-server, spring-boot-starter-oauth2-client
+
+1. Start Red Hat Single Sign-On (keycloak)
+2. Create a new <b>master</b> realm admin user
+3. Create a new realm: <b>sample</b>
+4. Under sample realm, create a new user (usr/pwd): <b>john/doe</b>
+5. Create new sample realm clients:
   - <b>sample-api</b> type: bearer-only
   - <b>sample-web</b> type: public
-5. Create client roles (for both clients):
+6. Create new client roles (for both clients):
   - <b>PRODUCT_VIEWER</b>
   - <b>PRODUCT_MAINTAINER</b>
-6. Create role mappings for user admin with recently created roles
-7. Start springboot app on port <b>8070</b>
+7. Assign role mappings for user john with recently created client roles
+8. Start springboot app on port <b>8070</b>
 
-TEST:<br>
+```shell
+rm -fr target ; mvn clean package
+java -jar target/springboot-open-id-connect-sample-1.0-SNAPSHOT.jar
+```
+
+TEST w/ postman:<br>
 `springboot2+spring_security+keycloak.postman_collection.json`
 
 <p align="center">
 Acquire access token:
+<br>
 <img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/03.png" title="POST /token" width="85%" height="85%" />
 <br>
 <img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/04.png" title="POST /token" width="80%" height="80%" />
 </p>
 <br>
-<br>
-<br>
 <p align="center">
 Create a new product:
+<br>
 <img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/01.png" title="POST Product" width="85%" height="85%" />
 </p>
 <br>
 <p align="center">
 Retrieve all products:
+<br>
 <img src="https://raw.githubusercontent.com/aelkz/springboot-open-id-connect-sample/master/images/02.png" title="GET Products" width="85%" height="85%" />
 </p>
 
