@@ -75,6 +75,7 @@ springdoc:
     - /v1/**
   api-docs:
     enabled: true
+    path: /api-docs
   default-produces-media-type: application/json
   show-actuator: true
 

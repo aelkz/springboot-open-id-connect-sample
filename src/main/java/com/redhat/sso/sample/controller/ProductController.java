@@ -56,14 +56,14 @@ public class ProductController extends BaseController {
     @Operation(summary = "Find all products")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "product(s) found",
-            content = {@Content(mediaType = "application/json",
-            array = @ArraySchema(arraySchema = @Schema(implementation = Product.class)))})
+            content = {
+                @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Product.class)))
+        })
     })
     public Page<Product> getAll(
             @Parameter(description = "Zero-based page index") @RequestParam(required = false) Integer page,
             @Parameter(description =  "The size of the page to be returned") @RequestParam(required = false) Integer size
     ) {
-
         if (size == null)
             size = DEFAULT_PAGE_SIZE;
 

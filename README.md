@@ -54,3 +54,4 @@ https://github.com/hotire/spring-security-basic<br>
 https://stackoverflow.com/questions/58205510/spring-security-mapping-oauth2-claims-with-roles-to-secure-resource-server-endp<br>
 https://developers.redhat.com/blog/2020/01/29/api-login-and-jwt-token-generation-using-keycloak
 https://access.redhat.com/products/red-hat-single-sign-on
+https://www.baeldung.com/spring-rest-openapi-documentation

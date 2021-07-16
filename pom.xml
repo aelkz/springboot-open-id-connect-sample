@@ -203,6 +203,11 @@
         <!-- openapi -->
         <dependency>
             <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-security</artifactId>
+            <version>${version.springdoc-openapi}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>${version.springdoc-openapi}</version>
         </dependency>

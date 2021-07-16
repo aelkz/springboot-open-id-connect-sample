@@ -39,6 +39,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
+        http.authorizeRequests()
+            .antMatchers("/api-docs.yaml", "/api-docs/**", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html")
+            .permitAll();
+
         http.anonymous().authorities("ROLE_ANONYMOUS");
         http.cors().configurationSource(corsConfigurationSource());
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
