@@ -47,7 +47,7 @@ Retrieve all products:
 
 ### API-DOCS (springdoc-openapi)
 
-http://localhost:8070/api-docs (json)
+http://localhost:8070/api-docs (json)<br>
 http://localhost:8070/api-docs.yaml
 
 <p align="center">
