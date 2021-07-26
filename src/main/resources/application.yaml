@@ -52,15 +52,15 @@ spring:
         provider:
           keycloak:
             # required for application bootstrap
-            issuer-uri: ${OPENSHIFT_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/sample}
+            issuer-uri: ${OPENSHIFT_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/codigofonte}
         registration:
           keycloak:
-            client-id: ${OPENSHIFT_SECURITY_CLIENT_ID:sample-api}
-            client-secret: ${OPENSHIFT_SECURITY_CLIENT_SECRET:942c02c3-6346-4922-99cc-29ff690d888e}
+            client-id: ${OPENSHIFT_SECURITY_CLIENT_ID:product-api}
+            client-secret: ${OPENSHIFT_SECURITY_CLIENT_SECRET:90f91456-d9c2-43c1-935b-4736ccc1872d}
       resourceserver:
         jwt:
-          issuer-uri: ${rest.security.issuer-uri}
-          jwk-set-uri: ${OPENSHIFT_SECURITY_JWK_URI:http://localhost:8080/auth/realms/sample/protocol/openid-connect/certs}
+          issuer-uri: ${OPENSHIFT_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/codigofonte}
+          jwk-set-uri: ${OPENSHIFT_SECURITY_JWK_URI:http://localhost:8080/auth/realms/codigofonte/protocol/openid-connect/certs}
 
 # =============================================
 # spring doc configurations
@@ -68,7 +68,7 @@ spring:
 
 springdoc:
   packagesToScan:
-    - com.redhat.sso.sample.controller
+    - com.redhat.keycloak.controller
   pathsToMatch:
     - /v1
     - /api/v1/**
@@ -78,54 +78,3 @@ springdoc:
     path: /api-docs
   default-produces-media-type: application/json
   show-actuator: true
-
-# =============================================
-# spring security configurations
-# ---------------------------------------------
-rest:
-  security:
-    enabled: true
-    api-matcher: /api/v1/**
-    cors:
-      allowed-origins: '*'
-      allowed-headers: '*'
-      allowed-methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
-      max-age: 3600
-    issuer-uri: ${OPENSHIFT_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/sample}
-
-# =============================================
-# spring actuator configurations
-# ---------------------------------------------
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
-      # if you want to change the default prometheus endpoint, just change the 'id' to another value.
-      id: prometheus
-  endpoints:
-    web:
-      exposure:
-        include: ["*"]
-  metrics:
-    export:
-      prometheus:
-        enabled: true
-
-# =============================================
-# opentracing configurations
-# ---------------------------------------------
-opentracing:
-  jaeger:
-    enabled: true
-    enable-b3-propagation: true
-    log-spans: true
-    const-sampler:
-      decision: true
-    http-sender:
-      url: http://jaeger-collector:14268/api/traces
-
-jaeger.tracer:
-  host: ${OPENSHIFT_JAEGER_HOST:jaeger-agent.CHANGEME.svc}
-  port: 6831

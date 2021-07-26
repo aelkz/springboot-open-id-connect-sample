@@ -1,4 +1,4 @@
-package com.redhat.sso.sample.security.jwt;
+package com.redhat.keycloak.security.jwt;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
@@ -42,16 +42,11 @@ public class JwtAuthenticationConverter implements Converter<Jwt, AbstractAuthen
     @Override
     public AbstractAuthenticationToken convert(@Nonnull Jwt jwt) {
 
-        System.out.println("START - JWT Claims DEBUG");
-
         jwt.getClaims().forEach((k,v) -> {
             System.out.println("["+k+"]=" + v);
         });
-        jwt.getAudience().forEach(System.out::println);
-        System.out.println(jwt.getId());
-        System.out.println(jwt.getIssuer());
 
-        System.out.println("END - JWT Claims DEBUG");
+        jwt.getAudience().forEach(System.out::println);
 
         Collection<GrantedAuthority> authorities
             = Stream.concat(defaultGrantedAuthoritiesConverter.convert(jwt).stream(),

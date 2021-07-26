@@ -5,17 +5,17 @@
 ##### authorization server: keycloak
 
 1. Start Red Hat Single Sign-On (keycloak)
-2. Create a new <b>master</b> realm admin user
-3. Create a new realm: <b>sample</b>
-4. Under sample realm, create a new user (usr/pwd): <b>john/doe</b>
-5. Create new sample realm clients:
-  - <b>sample-api</b> type: bearer-only
-  - <b>sample-web</b> type: public
-6. Create new client roles (for both clients):
+2. Create a new realm: <b>codigofonte</b>   
+3. Under <b>codigofonte</b> realm, create a new user (usr/pwd): <b>john/doe</b>
+4. Create a new client under <b>codigofonte</b> realm:
+  - <b>product-api</b><br>type: confidential (if using postman to issue new access tokens for testing purposes) or<br>type: bearer-only (real-world scenario)
+  <br><br>OBS.: Save the client credentials for use into `application.yaml` file within `security.oauth2.client.registration.keycloak.client-secret` property
+    
+5. Create new client roles:
   - <b>PRODUCT_VIEWER</b>
   - <b>PRODUCT_MAINTAINER</b>
-7. Assign role mappings for user john with recently created client roles
-8. Start springboot app on port <b>8070</b>
+6. Assign role mappings for user <b>john</b> with recently created client roles
+7. Start springboot app on port <b>8070</b>
 
 ```shell
 rm -fr target ; mvn clean package

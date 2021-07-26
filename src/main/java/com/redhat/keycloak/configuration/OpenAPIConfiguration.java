@@ -1,4 +1,4 @@
-package com.redhat.sso.sample.configuration;
+package com.redhat.keycloak.configuration;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;

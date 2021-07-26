@@ -1,4 +1,4 @@
-package com.redhat.sso.sample.model;
+package com.redhat.keycloak.model;
 
 import java.io.Serializable;
 

@@ -1,6 +1,6 @@
-package com.redhat.sso.sample.security.config;
+package com.redhat.keycloak.security.config;
 
-import com.redhat.sso.sample.security.jwt.JwtAuthenticationConverter;
+import com.redhat.keycloak.security.jwt.JwtAuthenticationConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;

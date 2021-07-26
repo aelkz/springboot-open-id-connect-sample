@@ -1,6 +1,6 @@
-package com.redhat.sso.sample.controller.validator;
+package com.redhat.keycloak.controller.validator;
 
-import com.redhat.sso.sample.model.Product;
+import com.redhat.keycloak.model.Product;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;

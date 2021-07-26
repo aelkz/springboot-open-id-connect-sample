@@ -1,4 +1,4 @@
-package com.redhat.sso.sample.security.config;
+package com.redhat.keycloak.security.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

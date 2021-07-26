@@ -1,6 +1,6 @@
-package com.redhat.sso.sample.controller;
+package com.redhat.keycloak.controller;
 
-import com.redhat.sso.sample.controller.error.Error;
+import com.redhat.keycloak.controller.error.Error;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.ResponseEntity;

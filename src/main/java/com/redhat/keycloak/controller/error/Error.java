@@ -1,4 +1,4 @@
-package com.redhat.sso.sample.controller.error;
+package com.redhat.keycloak.controller.error;
 
 public class Error {
 

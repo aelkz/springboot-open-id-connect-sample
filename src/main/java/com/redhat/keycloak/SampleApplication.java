@@ -1,4 +1,4 @@
-package com.redhat.sso.sample;
+package com.redhat.keycloak;
 
 import io.micrometer.core.instrument.config.MeterFilter;
 import org.springframework.boot.SpringApplication;

@@ -1,8 +1,8 @@
-package com.redhat.sso.sample.controller;
+package com.redhat.keycloak.controller;
 
-import com.redhat.sso.sample.controller.validator.ProductValidator;
-import com.redhat.sso.sample.model.Product;
-import com.redhat.sso.sample.service.ProductService;
+import com.redhat.keycloak.controller.validator.ProductValidator;
+import com.redhat.keycloak.model.Product;
+import com.redhat.keycloak.service.ProductService;
 import io.micrometer.core.annotation.Timed;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

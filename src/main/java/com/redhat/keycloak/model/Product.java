@@ -1,4 +1,4 @@
-package com.redhat.sso.sample.model;
+package com.redhat.keycloak.model;
 
 import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;

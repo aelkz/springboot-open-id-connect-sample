@@ -1,7 +1,7 @@
-package com.redhat.sso.sample.service;
+package com.redhat.keycloak.service;
 
-import com.redhat.sso.sample.model.Product;
-import com.redhat.sso.sample.repository.ProductRepository;
+import com.redhat.keycloak.repository.ProductRepository;
+import com.redhat.keycloak.model.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
