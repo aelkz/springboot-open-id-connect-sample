@@ -23,6 +23,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 
 @RestController
@@ -36,42 +38,23 @@ public class ProductController extends BaseController {
     @Autowired
     ProductService service;
 
-    @Timed(value = "product.create", description = "Create a new product endpoint")
-    @PreAuthorize("hasAuthority('ROLE_PRODUCT_MAINTAINER')")
-    @RequestMapping(path = "/v1/product", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE })
-    @Operation(summary = "Create new product")
-    @ApiResponses(value = {
-        @ApiResponse(responseCode = "201", description = "product created",
-            content = {@Content(mediaType = "application/json",
-                schema = @Schema(implementation = Product.class))})
-    })
+    @RolesAllowed("ROLE_PRODUCT_MAINTAINER")
+    @RequestMapping(path = "/v1/product", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Product> create(@Valid @RequestBody Product product) {
         Product record = service.create(product);
-        return ResponseEntity.ok().body(record);
+        return ResponseEntity.ok().body(product);
     }
 
-    @Timed(value = "product.getAll", description = "Get all products endpoint")
-    @PreAuthorize("hasRole('ROLE_PRODUCT_VIEWER')")
-    @RequestMapping(path = "/v1/product", method = RequestMethod.GET, consumes = { MediaType.APPLICATION_JSON_VALUE })
-    @Operation(summary = "Find all products")
-    @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "product(s) found",
-            content = {
-                @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Product.class)))
-        })
-    })
+    @RolesAllowed("ROLE_PRODUCT_VIEWER")
+    @RequestMapping(path = "/v1/product", method = RequestMethod.GET, consumes = {MediaType.APPLICATION_JSON_VALUE})
     public Page<Product> getAll(
             @Parameter(description = "Zero-based page index") @RequestParam(required = false) Integer page,
-            @Parameter(description =  "The size of the page to be returned") @RequestParam(required = false) Integer size
-    ) {
-        if (size == null)
-            size = DEFAULT_PAGE_SIZE;
-
-        if (page == null)
-            page = 0;
+            @Parameter(description = "The size of the page to be returned") @RequestParam(required = false) Integer size
+    ){
+        if (size == null) size = DEFAULT_PAGE_SIZE;
+        if (page == null) page = 0;
 
         Pageable pageable = PageRequest.of(page, size);
-
         return service.findAll(pageable);
     }
 

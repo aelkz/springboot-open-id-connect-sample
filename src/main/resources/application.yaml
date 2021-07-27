@@ -3,9 +3,6 @@ api:
 
 logging:
   config: classpath:logback.xml
-  level:
-    io:
-      jaegertracing: DEBUG
 
 # lets listen on all ports to ensure we can be invoked from the pod ip address
 # contextPath: /api/v${api.version}/*
@@ -18,7 +15,7 @@ server:
 # ---------------------------------------------
 spring:
   application:
-    name: ${OPENSHIFT_APP_NAME:sample-api}
+    name: ${OPENSHIFT_APP_NAME:product-api}
   jpa:
     # log generated sql
     database-platform: org.hibernate.dialect.H2Dialect
@@ -56,11 +53,25 @@ spring:
         registration:
           keycloak:
             client-id: ${OPENSHIFT_SECURITY_CLIENT_ID:product-api}
-            client-secret: ${OPENSHIFT_SECURITY_CLIENT_SECRET:90f91456-d9c2-43c1-935b-4736ccc1872d}
+            client-secret: ${OPENSHIFT_SECURITY_CLIENT_SECRET:f87c6fe9-2155-4c28-bb04-68f8983b5ad1}
       resourceserver:
         jwt:
           issuer-uri: ${OPENSHIFT_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/codigofonte}
           jwk-set-uri: ${OPENSHIFT_SECURITY_JWK_URI:http://localhost:8080/auth/realms/codigofonte/protocol/openid-connect/certs}
+
+# =============================================
+# spring security configurations
+# ---------------------------------------------
+rest:
+  security:
+    enabled: true
+    api-matcher: /api/v1/**
+    cors:
+      allowed-origins: '*'
+      allowed-headers: '*'
+      allowed-methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
+      max-age: 3600
+    issuer-uri: ${OPENSHIFT_SECURITY_ISSUER_URI:http://localhost:8080/auth/realms/codigofonte}
 
 # =============================================
 # spring doc configurations

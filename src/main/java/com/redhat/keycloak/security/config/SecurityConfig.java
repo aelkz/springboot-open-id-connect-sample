@@ -23,7 +23,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
 @ConditionalOnProperty(prefix = "rest.security", value = "enabled", havingValue = "true")
 @Import({SecurityCorsConfig.class})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -48,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().configurationSource(corsConfigurationSource());
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.headers().frameOptions().disable();
-        http.csrf().disable(); // not for production environments!
+        //http.csrf().disable(); // not for production environments!
 
         http.oauth2ResourceServer()
             .jwt()
