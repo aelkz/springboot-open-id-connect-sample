@@ -31,7 +31,7 @@
         <version.java>1.8</version.java>
         <version.maven.enforcer>1.4.1</version.maven.enforcer>
         <version.spring-cloud>Hoxton.SR12</version.spring-cloud>
-        <version.springboot>2.5.2</version.springboot>
+        <version.springboot>2.5.12</version.springboot>
         <version.springdoc-openapi>1.5.9</version.springdoc-openapi>
         <version.jackson.dataformat.xml>2.12.4</version.jackson.dataformat.xml>
         <version.junit.jupiter>5.7.2</version.junit.jupiter>
